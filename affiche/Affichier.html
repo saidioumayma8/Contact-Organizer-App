@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/Affichier.css">
+    <title>List Contacts</title>
 </head>
 <body>
+    
     <header>
-      
         <nav class="navbar navbar-expand-lg custom-navbar">
             <a class="navbar-brand text-white" href="../index.html">ContactApp</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-white" href="../ajouter/Add.html">Add Contact </a>
+                        <a class="nav-link text-white" href="../ajouter/Add.html">Add Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="../affiche/Affichier.html">List Contact</a>
@@ -27,27 +25,23 @@
         </nav>
     </header>
 
+    <section class="container mt-4">
         <table class="table table-bordered">
             <thead>
-                <div class="elements-of-table">
                 <tr>
-                    <th>Profile</th>
-                    <th>Name </th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Gender</th>
                     <th>City</th>
                     <th>Phone</th>
-                    
+                    <th>Actions</th>
                 </tr>
-                </div>
             </thead>
-        <tbody  id="contactList">
-            
-        </tbody>
-      </table>
-    </body>
-    <script src="../Js/affichier.js"></script>
-     
-    
+            <tbody id="contactList">
+            </tbody>
+        </table>
+    </section>
 
+    <script src="../Js/affichier.js"></script>
+</body>
 </html>
