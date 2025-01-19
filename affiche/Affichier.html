@@ -8,40 +8,44 @@
     <title>List Contacts</title>
 </head>
 <body>
-    
+
     <header>
         <nav class="navbar navbar-expand-lg custom-navbar">
-            <a class="navbar-brand text-white" href="../index.html">ContactApp</a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-white" href="../ajouter/Add.html">Add Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="../affiche/Affichier.html">List Contact</a>
-                    </li>
-                </ul>
+            <a href="../index.html" class="navbar-brand">ContactApp</a>
+            <div class="burger" id="burger">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
+            <ul class="navbar-links" id="navbarLinks">
+                <li><a href="../ajouter/Add.html">Add Contact</a></li>
+                <li><a href="../affiche/Affichier.html">List Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <section class="container mt-4">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>City</th>
-                    <th>Phone</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="contactList">
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>City</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="contactList">
+                    <!-- Contact rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <script src="../Js/affichier.js"></script>
+    <script src="../Js/berger.js"></script>
+
 </body>
 </html>

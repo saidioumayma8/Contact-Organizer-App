@@ -1,15 +1,9 @@
-let contacts = [];
-
 function loadContacts() {
-    contacts = JSON.parse(localStorage.getItem("contacts")) || [];
-    displayContacts(contacts);
-}
-
-function displayContacts(contactList) {
+    const contacts = JSON.parse(localStorage.getItem("contacts")) || [];
     const tbody = document.querySelector("#contactList");
-    tbody.innerHTML = "";
+    tbody.innerHTML = ""; // Clear existing content
 
-    contactList.forEach((contact) => {
+    contacts.forEach((contact) => {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${contact.name}</td>
@@ -25,10 +19,13 @@ function displayContacts(contactList) {
     });
 }
 
+// Delete a contact by its ID
 function deleteContact(id) {
+    let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
     contacts = contacts.filter((contact) => contact.id !== id);
     localStorage.setItem("contacts", JSON.stringify(contacts));
-    loadContacts();
+    loadContacts(); // Reload the contact list
 }
 
+// Load contacts when the page loads
 window.onload = loadContacts;

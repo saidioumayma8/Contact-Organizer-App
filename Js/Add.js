@@ -14,25 +14,22 @@ document.querySelector("form").addEventListener("submit", function (e) {
     // Input validation
     let valid = true;
 
+    // Clear previous errors before validating
+    clearAllErrors();
+
     if (!nom) {
         showError("nom", "Nom is required.");
         valid = false;
-    } else {
-        clearError("nom");
     }
 
     if (!prenom) {
         showError("prenom", "Prénom is required.");
         valid = false;
-    } else {
-        clearError("prenom");
     }
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         showError("email", "Invalid email format.");
         valid = false;
-    } else {
-        clearError("email");
     }
 
     if (!gender) {
@@ -43,15 +40,11 @@ document.querySelector("form").addEventListener("submit", function (e) {
     if (!ville) {
         showError("ville", "Ville is required.");
         valid = false;
-    } else {
-        clearError("ville");
     }
 
     if (!telephone || !/^\d{10}$/.test(telephone)) {
         showError("telephone", "Phone number must be 10 digits.");
         valid = false;
-    } else {
-        clearError("telephone");
     }
 
     // Stop if validation fails
@@ -79,6 +72,7 @@ function showError(fieldId, message) {
     const field = document.getElementById(fieldId);
     let error = field.nextElementSibling;
 
+    // Only create a new error message if it doesn't exist
     if (!error || error.className !== "error-message") {
         error = document.createElement("div");
         error.className = "error-message text-danger";
@@ -95,4 +89,10 @@ function clearError(fieldId) {
     if (error && error.className === "error-message") {
         error.remove();
     }
+}
+
+// Clear all error messages
+function clearAllErrors() {
+    const errors = document.querySelectorAll(".error-message");
+    errors.forEach(error => error.remove());
 }

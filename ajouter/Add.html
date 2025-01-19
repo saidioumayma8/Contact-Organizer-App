@@ -9,20 +9,16 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg custom-navbar">
-        <a class="navbar-brand text-white" href="../index.html">ContactApp</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link text-white" href="./Add.html">Add Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="../affiche/Affichier.html">List Contact</a>
-                </li>
-            </ul>
+        <a href="../index.html" class="navbar-brand">ContactApp</a>
+        <div class="burger" id="burger">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+        <ul class="navbar-links" id="navbarLinks">
+            <li><a href="../ajouter/Add.html">Add Contact</a></li>
+            <li><a href="../affiche/Affichier.html">List Contact</a></li>
+        </ul>
     </nav>
 
     <section class="container mt-4">
@@ -75,5 +71,7 @@
     </section>
 
     <script src="../Js/Add.js"></script>
+    <script src="../Js/berger.js"></script>
+
 </body>
 </html>
